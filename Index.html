@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Studio Morocco</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#0b0b0b;
+color:white;
+transition:0.4s;
+}
+
+header{
+background:linear-gradient(90deg,#ff7a00,#ffb300);
+padding:25px;
+text-align:center;
+font-size:28px;
+font-weight:bold;
+}
+
+.hero{
+padding:70px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero p{
+color:#ccc;
+}
+
+.btn{
+margin-top:20px;
+padding:15px 25px;
+border:none;
+background:#ff7a00;
+color:white;
+font-size:16px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.section{
+padding:50px 20px;
+text-align:center;
+}
+
+.card{
+background:#1c1c1c;
+padding:20px;
+margin:10px;
+border-radius:12px;
+display:inline-block;
+width:220px;
+}
+
+.toggle{
+position:fixed;
+top:10px;
+right:10px;
+background:#fff;
+color:#000;
+border:none;
+padding:10px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.dark{
+background:#ffffff;
+color:#000;
+}
+
+.dark .card{
+background:#eee;
+color:#000;
+}
+</style>
+
+</head>
+
+<body>
+
+<button class="toggle" onclick="toggleMode()">🌙</button>
+
+<header>⚡ Web Studio Morocco</header>
+
+<div class="hero">
+<h1 id="title">We Build Websites</h1>
+<p id="text">Fast, modern and professional websites for businesses</p>
+
+<a href="https://wa.me/212600000000" target="_blank">
+<button class="btn">Contact on WhatsApp</button>
+</a>
+
+<button class="btn" onclick="changeText()">Change Message</button>
+
+</div>
+
+<div class="section">
+<h2>Our Services</h2>
+
+<div class="card">Business Websites</div>
+<div class="card">Landing Pages</div>
+<div class="card">Online Stores</div>
+
+</div>
+
+<script>
+
+// رسالة تتبدل
+function changeText(){
+document.getElementById("text").innerText =
+"We help you get more customers online 🔥";
+}
+
+// dark mode / light mode
+function toggleMode(){
+document.body.classList.toggle("dark");
+}
+
+// animation بسيطة
+window.onload = function(){
+document.getElementById("title").style.opacity = 0;
+setTimeout(()=>{
+document.getElementById("title").style.transition = "1s";
+document.getElementById("title").style.opacity = 1;
+},200);
+}
+
+</script>
+
+</body>
+</html>
